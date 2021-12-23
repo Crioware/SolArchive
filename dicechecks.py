@@ -3,8 +3,7 @@ import discord
 
 
 # Rolls nDn
-# TODO: Is this basic dice command even necessary?
-def dice(number, sides):
+def basicRoll(number, sides):
     rTotal = 0
     i = 0
     while i < number:
@@ -15,7 +14,7 @@ def dice(number, sides):
 
 # For when/if I implement another checking system
 async def cSwitch(ctx, target, roll):
-    ones = int(str(roll)[1]) # These allow for crit checking
+    ones = int(str(roll)[1])  # These allow for crit checking
     tens = int(str(roll)[0])
     result = ('**Target:** ' + str(target) + ' **Roll:** ' + str(roll) + ',')  # Displays target vs roll
 
@@ -51,9 +50,14 @@ async def cSwitch(ctx, target, roll):
 
 
 # Check with manual input and modifier
-async def mcheck(ctx, target, mod):
+async def manCheck(ctx, target, mod):
     target += mod
 
-    roll = random.randint(0, 99)
+    roll = basicRoll(1, 99)
     await cSwitch(ctx, target, roll)  # Passes everything onto cSwitch
 
+
+# TODO: Work on me in testing.py the old code is bad
+# A proper nDn roller
+async def ndnRoll(ctx, inputDice):
+    pass

@@ -33,7 +33,7 @@ async def on_ready():
 # Manual skill check
 @ui.slash.command(name='Skill Check', description='A standard skill check', options=[SlashOption(int, 'Target', 'The target value you need to roll under.',required=True), SlashOption(int, 'Modifier', 'The modifier to your roll.')])
 async def manCheck(ctx, target, modifier=0):
-    await dicechecks.mcheck(ctx, target, modifier)
+    await dicechecks.manCheck(ctx, target, modifier)
 
 
 # Kills the Process :sadge:
